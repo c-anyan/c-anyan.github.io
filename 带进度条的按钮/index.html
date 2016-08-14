@@ -1,0 +1,57 @@
+<!doctype html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>带进度条的按钮</title>
+    <style>
+        #divbtn {
+            width: 200px;
+            height: 40px;
+            line-height: 40px;
+            background-color: yellow;
+            text-align: center;
+            color: #999;
+            border:1px solid #ccc;
+            border-radius: 5px;
+            position: relative;
+        }
+        #jindu {
+            position: absolute;
+            width: 0;
+            left: 0;
+            top: 0;
+            height: 40px;
+            background-color: red;
+            opacity: 0.3;
+        }
+    </style>
+</head>
+<body>
+    
+    <div id="divbtn">
+        点击
+        <div id="jindu"></div>
+    </div>
+
+    <script>    
+
+    var divbtn = document.getElementById('divbtn'),
+          jindu = document.getElementById('jindu'),
+          aaa = 0,
+          timer;
+
+          divbtn.onclick = function(){
+        
+                // window.location.href="http://www.baidu.com";
+               timer = setInterval(function(){
+                   aaa++;
+                   jindu.style.width = aaa *10 + '%';
+                   if (aaa == 10 ){
+                       clearInterval(timer);
+                   };
+               },200); 
+          };
+
+    </script>
+</body>
+</html>
